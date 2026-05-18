@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Neon Reactor</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="app">
+    <section class="hud" aria-label="Panel de juego">
+      <div>
+        <p class="kicker">Reflejos + combos</p>
+        <h1>Neon Reactor</h1>
+      </div>
+
+      <div class="stats">
+        <article>
+          <span>Puntos</span>
+          <strong id="score">0</strong>
+        </article>
+        <article>
+          <span>Combo</span>
+          <strong>x<span id="combo">1</span></strong>
+        </article>
+        <article>
+          <span>Tiempo</span>
+          <strong><span id="time">45</span>s</strong>
+        </article>
+        <article>
+          <span>Récord</span>
+          <strong id="best">0</strong>
+        </article>
+      </div>
+    </section>
+
+    <section class="arena-wrap">
+      <div id="arena" class="arena" aria-label="Arena de objetivos">
+        <div class="scanline"></div>
+        <p id="message" class="message">Pulsa INICIAR y caza los núcleos antes de que exploten.</p>
+      </div>
+    </section>
+
+    <section class="controls">
+      <button id="start" class="primary" type="button">Iniciar</button>
+      <button id="mute" class="secondary" type="button" aria-pressed="false">Sonido: ON</button>
+      <p>Objetivo verde: puntos. Objetivo rosa: bonus. Si fallas, pierdes combo y tiempo.</p>
+    </section>
+  </main>
+
+  <div id="game-over" class="overlay hidden" role="dialog" aria-modal="true" aria-labelledby="over-title">
+    <div class="modal">
+      <p class="kicker">Reactor apagado</p>
+      <h2 id="over-title">Game Over</h2>
+      <p>Marcador final: <strong id="final-score">0</strong></p>
+      <p>Mejor marca: <strong id="final-best">0</strong></p>
+      <button id="restart" class="primary" type="button">Jugar otra vez</button>
+    </div>
+  </div>
+
+  <script src="main.js"></script>
+</body>
+</html>
